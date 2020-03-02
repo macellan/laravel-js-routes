@@ -14,7 +14,7 @@ Begin by installing this package through Composer. Edit your project's `composer
 {
   "require": {
         "laravel/framework": "~5.5 || ~6.0",
-        "macellan/laravel-js-routes": "1.*"
+        "macellan/laravel-js-routes": "2.*"
     },
     "minimum-stability" : "dev"
 }
@@ -48,7 +48,6 @@ php artisan routes:javascript
 | Name     | Default     | Description     |
 | -------- |:-----------:| --------------- |
 | **path**   | *base_path()* | Where to save the generated filename. (ie. public assets folder) |
-| **filter** | *null*        | If you want only some routes to be available on JS, you can use a filter (like js-routable) to select only those |
 | **object** | *Router*      | If you want to choose your own global JS object (to avoid collision) |
 | **prefix** | *null*        | If you want to a path to prefix to all your routes |
 

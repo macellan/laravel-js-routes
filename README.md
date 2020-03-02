@@ -8,22 +8,10 @@ The goal of this library is to expose those named routes to your frontend so you
 
 ## Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `macellan/laravel-js-routes`.
+You can install this package via composer:
 
-```json
-{
-  "require": {
-        "laravel/framework": "~5.5 || ~6.0",
-        "macellan/laravel-js-routes": "2.*"
-    },
-    "minimum-stability" : "dev"
-}
-```
-
-Next, update Composer from the Terminal:
-
-```bash
-composer update
+``` bash
+composer require macellan/laravel-js-routes
 ```
 
 ## Usage

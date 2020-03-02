@@ -1,26 +1,32 @@
 <?php
 
-use Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator;
-use Mockery as m;
+namespace Macellan\LaravelJsRoutes;
 
-class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
+use Illuminate\Events\Dispatcher;
+use Illuminate\Routing\Router;
+use Macellan\LaravelJsRoutes\Generators\RoutesJavascriptGenerator;
+use Mockery as m;
+use PHPUnit\Framework\TestCase;
+
+class RoutesJavascriptGeneratorTest extends TestCase
 {
 
     protected static $templatesDir;
 
     public function __construct()
     {
+        parent::__construct();
         static::$templatesDir = __DIR__.'/../../src/Way/Generators/Generators/templates';
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }
 
     protected function getRouter()
     {
-        $router = new Illuminate\Routing\Router(new Illuminate\Events\Dispatcher);
+        $router = new Router(new Dispatcher);
         $router->get('user/{id}', ['as' => 'user.show', 'uses' => function ($id) {
             return $id;
         }]);

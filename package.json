@@ -1,9 +1,9 @@
 {
-  "name": "laravel-4-js-routes",
-  "version": "0.0.1",
-  "description": "Laravel 4 Routes from Javascript",
+  "name": "laravel-js-routes",
+  "version": "1.0.0",
+  "description": "Laravel Routes from Javascript",
   "license": "MIT",
-  "homepage": "http://github.com/fedeisas/laravel-js-routes",
+  "homepage": "http://github.com/macellan/laravel-js-routes",
   "author": {
     "name": "Fede Isas",
     "url": "https://twitter.com/fedeisas",

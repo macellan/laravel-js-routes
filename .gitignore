@@ -1,7 +1,8 @@
 /vendor/
 /node_modules/
 /.grunt/
-/build/
-composer.phar
-_SpecRunner.html
+build
+.idea
+.phpunit.result.cache
+composer.lock
 .DS_Store

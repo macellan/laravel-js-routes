@@ -1,23 +1,16 @@
 <?php
 
-use Fedeisas\LaravelJsRoutes\Commands\RoutesJavascriptCommand;
+namespace Macellan\LaravelJsRoutes;
+
+use Macellan\LaravelJsRoutes\Commands\RoutesJavascriptCommand;
 use Symfony\Component\Console\Tester\CommandTester;
 use Mockery as m;
+use PHPUnit\Framework\TestCase;
 
-class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
+class RoutesJavascriptCommandTest extends TestCase
 {
 
-    public function setUp()
-    {
-        $app = m::mock('Application')
-                ->shouldReceive('make')
-                ->with('path.base')
-                ->andReturn('/foo/bar')
-                ->mock();
-        Illuminate\Support\Facades\Facade::setFacadeApplication($app);
-    }
-
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }
@@ -25,7 +18,7 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
     /** @test **/
     public function it_generated_javascript()
     {
-        $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
+        $generator = m::mock('Macellan\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
 
         $generator->shouldReceive('make')
             ->once()
@@ -43,7 +36,7 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
     /** @test **/
     public function it_can_set_custom_path_and_custom_object_and_prefix()
     {
-        $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
+        $generator = m::mock('Macellan\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
 
         $generator->shouldReceive('make')
             ->once()
@@ -61,7 +54,7 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
     /** @test **/
     public function it_fails_on_unexistent_path()
     {
-        $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
+        $generator = m::mock('Macellan\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
 
         $generator->shouldReceive('make')
             ->once()

@@ -1,6 +1,8 @@
-<?php namespace Fedeisas\LaravelJsRoutes\Commands;
+<?php
 
-use Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator;
+namespace Macellan\LaravelJsRoutes\Commands;
+
+use Macellan\LaravelJsRoutes\Generators\RoutesJavascriptGenerator;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -25,7 +27,7 @@ class RoutesJavascriptCommand extends Command
     /**
      * Javascript generator instance.
      *
-     * @var Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator
+     * @var Macellan\LaravelJsRoutes\Generators\RoutesJavascriptGenerator
      */
     protected $generator;
 
@@ -45,12 +47,11 @@ class RoutesJavascriptCommand extends Command
      *
      * @return mixed
      */
-    public function fire()
+    public function handle()
     {
         $path = $this->getPath();
 
         $options = [
-            'filter' => $this->option('filter'),
             'object' => $this->option('object'),
             'prefix' => $this->option('prefix'),
         ];
@@ -93,7 +94,6 @@ class RoutesJavascriptCommand extends Command
     {
         return [
            ['path', 'p', InputOption::VALUE_OPTIONAL, 'Path to assets directory.', base_path()],
-           ['filter', 'f', InputOption::VALUE_OPTIONAL, 'Custom route filter.', null],
            ['object', 'o', InputOption::VALUE_OPTIONAL, 'Custom JS object.', 'Router'],
            ['prefix', 'prefix', InputOption::VALUE_OPTIONAL, 'Custom route prefix.', null],
         ];

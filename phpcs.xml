@@ -2,7 +2,6 @@
 <ruleset name="Vest">
   <description>Coding standard.</description>
 
-  <exclude-pattern>*/tests/jasmine/*</exclude-pattern>
   <exclude-pattern>*.js</exclude-pattern>
 
   <rule ref="PSR2" />
